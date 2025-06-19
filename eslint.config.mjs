@@ -5,17 +5,22 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import tseslint from 'typescript-eslint';
 
 const ignores = [
+  '__mocks__',
   '.bundle',
+  '.github',
+  '.husky',
   '.vscode',
-  'node_modules',
   'android',
-  'ios',
   'coverage',
+  'ios',
+  'node_modules',
   'babel.config.js',
-  'metro.config.js',
-  'jest.config.js',
+  'commitlint.config.mjs',
   'eslint.config.mjs',
   'index.js',
+  'jest.config.mjs',
+  'jest.setup.js',
+  'metro.config.js',
 ];
 
 export default tseslint.config(
