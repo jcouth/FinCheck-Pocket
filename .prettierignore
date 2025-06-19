@@ -1,0 +1,6 @@
+.bundle
+node_modules
+android
+ios
+coverage
+*.snap
