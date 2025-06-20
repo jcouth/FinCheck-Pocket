@@ -62,9 +62,6 @@
     ],
     "*.{json,md}": [
       "prettier --write"
-    ],
-    "*.{test,spec}.[jt]sx?": [
-      "jest --verbose --bail --findRelatedTests"
     ]
   },
   "standard-version": {
