@@ -22,6 +22,7 @@
     "index.js",
     "jest.config.mjs",
     "jest.setup.js",
-    "metro.config.js"
+    "metro.config.js",
+    "prettier.config.mjs"
   ]
 }

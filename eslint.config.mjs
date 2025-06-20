@@ -21,6 +21,7 @@ const ignores = [
   'jest.config.mjs',
   'jest.setup.js',
   'metro.config.js',
+  'prettier.config.mjs',
 ];
 
 export default tseslint.config(
