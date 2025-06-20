@@ -54,12 +54,15 @@
     "node": ">=18"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
+    "*.[jt]sx?": [
       "eslint --fix",
       "prettier --write"
     ],
     "*.{json,md}": [
       "prettier --write"
+    ],
+    "*.{test,spec}.[jt]sx?": [
+      "jest --verbose --bail --findRelatedTests"
     ]
   }
 }
