@@ -2,6 +2,8 @@ const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 const {
   wrapWithReanimatedMetroConfig,
 } = require('react-native-reanimated/metro-config');
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const path = require('path');
 
 const defaultConfig = getDefaultConfig(__dirname);
 
@@ -18,6 +20,7 @@ const config = {
     babelTransformerPath: require.resolve(
       'react-native-svg-transformer/react-native',
     ),
+    unstable_allowRequireContext: true,
   },
   resolver: {
     assetExts: assetExts.filter(ext => ext !== 'svg'),
@@ -27,4 +30,10 @@ const config = {
 
 const finalConfig = mergeConfig(defaultConfig, config);
 
-module.exports = wrapWithReanimatedMetroConfig(finalConfig);
+module.exports = wrapWithReanimatedMetroConfig(
+  withStorybook(finalConfig, {
+    enabled: process.env.STORYBOOK_ENABLED === 'true',
+    configPath: path.resolve(__dirname, './.rnstorybook'),
+    onDisabledRemoveStorybook: true,
+  }),
+);

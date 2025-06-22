@@ -17,5 +17,5 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
   },
-  "cSpell.words": ["fincheck", "gorhom", "ondevice"]
+  "cSpell.words": ["fincheck", "gorhom", "ondevice", "rnstorybook"]
 }
