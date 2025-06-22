@@ -22,6 +22,7 @@ const ignores = [
   'jest.setup.js',
   'metro.config.js',
   'prettier.config.mjs',
+  'tailwind.config.js',
 ];
 
 export default tseslint.config(

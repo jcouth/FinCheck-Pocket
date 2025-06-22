@@ -5,7 +5,7 @@
       "~/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "nativewind-env.d.ts"],
   "exclude": [
     "__mocks__",
     ".bundle",
@@ -23,6 +23,7 @@
     "jest.config.mjs",
     "jest.setup.js",
     "metro.config.js",
-    "prettier.config.mjs"
+    "prettier.config.mjs",
+    "tailwind.config.tj"
   ]
 }

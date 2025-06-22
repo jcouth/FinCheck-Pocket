@@ -5,6 +5,7 @@ const config = {
   singleQuote: true,
   arrowParens: 'avoid',
   endOfLine: 'lf',
+  plugins: ['prettier-plugin-tailwindcss'],
 };
 
 export default config;

@@ -10,7 +10,8 @@
     "eamodio.gitlens",
     "pkief.material-icon-theme",
     "esbenp.prettier-vscode",
-    "msjsdiag.vscode-react-native"
+    "msjsdiag.vscode-react-native",
+    "bradlc.vscode-tailwindcss"
   ],
   "unwantedRecommendations": []
 }

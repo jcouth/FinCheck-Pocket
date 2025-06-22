@@ -17,5 +17,12 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
   },
+  "tailwindCSS.classAttributes": ["class", "className", "headerClassName"],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
   "cSpell.words": ["fincheck", "gorhom", "ondevice", "rnstorybook"]
 }

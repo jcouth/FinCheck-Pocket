@@ -4,7 +4,7 @@
  *
  * @format
  */
-
+import '../global.css';
 import { STORYBOOK_ENABLED } from '@env';
 import { NewAppScreen } from '@react-native/new-app-screen';
 import { StatusBar, StyleSheet, useColorScheme } from 'react-native';
