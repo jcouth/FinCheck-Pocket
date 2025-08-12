@@ -1,0 +1,54 @@
+name: CI
+run-name: CI • ${{ github.event_name }} • ${{ github.ref_name }}
+
+on:
+  pull_request:
+    branches: [main, 'release/**']
+    paths-ignore: ['**/*.md', 'docs/**']
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Checks (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [18, 20, 22]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: yarn
+
+      - name: Install deps
+        run: yarn install --frozen-lockfile
+
+      - name: Lint (ESLint)
+        run: yarn lint
+
+      - name: Typecheck (TS)
+        run: yarn tsc --noEmit
+
+      - name: Tests (Jest) with coverage
+        run: yarn test --coverage --runInBand
+
+      - name: Save coverage artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-node-${{ matrix.node }}
+          path: coverage
