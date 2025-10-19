@@ -3,7 +3,6 @@ const {
   wrapWithReanimatedMetroConfig,
 } = require('react-native-reanimated/metro-config');
 const withStorybook = require('@storybook/react-native/metro/withStorybook');
-const { withNativeWind } = require('nativewind/metro');
 const path = require('path');
 
 const defaultConfig = getDefaultConfig(__dirname);
@@ -32,7 +31,7 @@ const config = {
 const finalConfig = mergeConfig(defaultConfig, config);
 
 module.exports = wrapWithReanimatedMetroConfig(
-  withStorybook(withNativeWind(finalConfig, { input: './global.css' }), {
+  withStorybook(finalConfig, {
     enabled: process.env.STORYBOOK_ENABLED === 'true',
     configPath: path.resolve(__dirname, './.rnstorybook'),
     onDisabledRemoveStorybook: true,
