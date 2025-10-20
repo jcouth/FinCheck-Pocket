@@ -12,6 +12,7 @@ const ignores = [
   '.github',
   '.husky',
   '.vscode',
+  '.rnstorybook',
   'android',
   'coverage',
   'ios',

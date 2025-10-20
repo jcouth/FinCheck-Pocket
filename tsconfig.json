@@ -6,7 +6,7 @@
       "~/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", ".rnstorybook"],
   "exclude": [
     "__mocks__",
     ".bundle",
