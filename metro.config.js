@@ -8,6 +8,7 @@ const path = require('path');
 const defaultConfig = getDefaultConfig(__dirname);
 
 const { assetExts, sourceExts } = defaultConfig.resolver;
+const srcPath = path.resolve(__dirname, 'src');
 
 /**
  * Metro configuration
@@ -25,6 +26,9 @@ const config = {
   resolver: {
     assetExts: assetExts.filter(ext => ext !== 'svg'),
     sourceExts: [...sourceExts, 'svg'],
+    extraNodeModules: {
+      '~': srcPath,
+    },
   },
 };
 
