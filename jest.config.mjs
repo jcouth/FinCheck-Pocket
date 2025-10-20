@@ -2,6 +2,7 @@ const jestModules = ['@react-native', 'react-native'].join('|');
 
 export default {
   preset: 'react-native',
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   collectCoverageFrom: [
     'src/**/*.[jt]sx?',
     '!src/**/*.d.ts',
